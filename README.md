@@ -47,3 +47,40 @@ The first line is a positive process count. Exactly that many rows follow, each 
 2 3 1
 3 4 2
 ```
+
+## 3 Test Input 
+
+Input 1 
+```text
+4
+0 0 12
+1 2 4
+2 3 1
+3 4 2
+```
+
+Input 2 
+```text
+3
+10 2 3
+11 2 1
+12 8 2
+```
+
+Input 3 
+```text
+3
+20 0 4
+21 2 2
+22 2 1
+```
+## Result screenshot
+
+![Case 1 FCFS output](screenshots/case1-fcfs.png)
+
+
+![Case 1 RR output](screenshots/case1-rr.png)
+
+
+
+![Case 1 SJF output](screenshots/case1-sjf.png)
