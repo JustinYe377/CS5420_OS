@@ -76,11 +76,11 @@ Input 3
 ```
 ## Result screenshot
 
-![Case 1 FCFS output](screenshots/case1-fcfs.png)
+![Case 1 FCFS output](screenshots/case1-fcfs.PNG)
 
 
-![Case 1 RR output](screenshots/case1-rr.png)
+![Case 1 RR output](screenshots/case1-rr.PNG)
 
 
 
-![Case 1 SJF output](screenshots/case1-sjf.png)
+![Case 1 SJF output](screenshots/case1-sjf.PNG)
