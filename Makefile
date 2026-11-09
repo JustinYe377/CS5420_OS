@@ -1,35 +1,23 @@
-PYTHON ?= python
-INPUT ?= input.1
-ALGORITHM ?= FCFS
-QUANTUM ?= 5
+CXX ?= g++
+CXXFLAGS ?= -std=c++17 -Wall -Wextra -pedantic
 
-.PHONY: all run fcfs sjf rr test clean
+.PHONY: all test clean
 
-all:
-	$(PYTHON) -m py_compile proj2.py
+all: proj2
 
-run:
-	$(PYTHON) proj2.py $(INPUT) $(ALGORITHM) $(if $(filter RR,$(ALGORITHM)),$(QUANTUM))
+proj2: proj2.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $<
 
-fcfs:
-	$(PYTHON) proj2.py $(INPUT) FCFS
-
-sjf:
-	$(PYTHON) proj2.py $(INPUT) SJF
-
-rr:
-	$(PYTHON) proj2.py $(INPUT) RR $(QUANTUM)
-
-test:
-	$(PYTHON) proj2.py input.1 FCFS
-	$(PYTHON) proj2.py input.1 SJF
-	$(PYTHON) proj2.py input.1 RR 5
-	$(PYTHON) proj2.py input.2 FCFS
-	$(PYTHON) proj2.py input.2 SJF
-	$(PYTHON) proj2.py input.2 RR 2
-	$(PYTHON) proj2.py input.3 FCFS
-	$(PYTHON) proj2.py input.3 SJF
-	$(PYTHON) proj2.py input.3 RR 2
+test: proj2
+	./proj2 input.1 FCFS
+	./proj2 input.1 SJF
+	./proj2 input.1 RR 5
+	./proj2 input.2 FCFS
+	./proj2 input.2 SJF
+	./proj2 input.2 RR 2
+	./proj2 input.3 FCFS
+	./proj2 input.3 SJF
+	./proj2 input.3 RR 2
 
 clean:
-	$(PYTHON) -c "import shutil; shutil.rmtree('__pycache__', ignore_errors=True)"
+	$(RM) proj2
